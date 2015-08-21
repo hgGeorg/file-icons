@@ -4,6 +4,10 @@ module.exports =
       type: 'boolean'
       default: true
       description: 'Untick this for colourless icons'
+    darken:
+      type: 'boolean'
+      default: false
+      description: 'Darkens icons for light themes'
     forceShow:
       type: 'boolean'
       default: false
@@ -21,6 +25,10 @@ module.exports =
     atom.config.onDidChange 'file-icons.coloured', ({newValue, oldValue}) =>
       @colour newValue
     @colour atom.config.get 'file-icons.coloured'
+
+    atom.config.onDidChange 'file-icons.darken', ({newValue, oldValue}) =>
+      @darken newValue
+    @darken atom.config.get 'file-icons.darken'
 
     atom.config.onDidChange 'file-icons.forceShow', ({newValue, oldValue}) =>
       @forceShow newValue
@@ -47,6 +55,13 @@ module.exports =
       body.className = body.className.replace /\sfile-icons-colourless/, ''
     else
       body.className = "#{body.className} file-icons-colourless"
+
+  darken: (enable) ->
+    body = document.querySelector 'body'
+    if !enable
+      body.className = body.className.replace /\sdarken-icons/, ''
+    else
+      body.className = "#{body.className} darken-icons"
 
   forceShow: (enable) ->
     body = document.querySelector 'body'

@@ -4,6 +4,13 @@
 // but not colorize them.
 @colored-icons: true;
 
+.darken-for-light-theme(@color, @darken) when (@darken = true) {
+  color: darken(@color, 15%, relative);
+}
+.darken-for-light-theme(@color, @darken) when (@darken = false) {
+    color: @color;
+}
+
 /* @m<x> = .medium-<x>
  * @l<x> = .light-<x> (<x> ligthened 15%)
  * @d<x> = .dark-<x> (<x> darkened 15%)
@@ -54,38 +61,38 @@
 @lpk: lighten(@mpk, 15%);
 @dpk: darken(@mpk, 15%);
 
-.light-red when (@colored-icons) { color: @lr; }
-.medium-red when (@colored-icons) { color: @mr; }
-.dark-red when (@colored-icons) { color: @dr; }
+.light-red(@darken) when (@colored-icons) { .darken-for-light-theme(@lr, @darken) }
+.medium-red(@darken) when (@colored-icons) { .darken-for-light-theme(@mr, @darken) }
+.dark-red(@darken) when (@colored-icons) { .darken-for-light-theme(@dr, @darken) }
 
-.light-green when (@colored-icons) { color: @lg; }
-.medium-green when (@colored-icons) { color: @mg; }
-.dark-green when (@colored-icons) { color: @dg; }
+.light-green(@darken) when (@colored-icons) { .darken-for-light-theme(@lg, @darken) }
+.medium-green(@darken) when (@colored-icons) { .darken-for-light-theme(@mg, @darken) }
+.dark-green(@darken) when (@colored-icons) { .darken-for-light-theme(@dg, @darken) }
 
-.light-yellow when (@colored-icons) { color: @ly; }
-.medium-yellow when (@colored-icons) { color: @my; }
-.dark-yellow when (@colored-icons) { color: @dy; }
+.light-yellow(@darken) when (@colored-icons) { .darken-for-light-theme(@ly, @darken) }
+.medium-yellow(@darken) when (@colored-icons) { .darken-for-light-theme(@my, @darken) }
+.dark-yellow(@darken) when (@colored-icons) { .darken-for-light-theme(@dy, @darken) }
 
-.light-blue when (@colored-icons) { color: @lb; }
-.medium-blue when (@colored-icons) { color: @mb; }
-.dark-blue when (@colored-icons) { color: @db; }
+.light-blue(@darken) when (@colored-icons) { .darken-for-light-theme(@lb, @darken) }
+.medium-blue(@darken) when (@colored-icons) { .darken-for-light-theme(@mb, @darken) }
+.dark-blue(@darken) when (@colored-icons) { .darken-for-light-theme(@db, @darken) }
 
-.light-maroon when (@colored-icons) { color: @lm; }
-.medium-maroon when (@colored-icons) { color: @mm; }
-.dark-maroon when (@colored-icons) { color: @dm; }
+.light-maroon(@darken) when (@colored-icons) { .darken-for-light-theme(@lm, @darken) }
+.medium-maroon(@darken) when (@colored-icons) { .darken-for-light-theme(@mm, @darken) }
+.dark-maroon(@darken) when (@colored-icons) { .darken-for-light-theme(@dm, @darken) }
 
-.light-purple when (@colored-icons) { color: @lp; }
-.medium-purple when (@colored-icons) { color: @mp; }
-.dark-purple when (@colored-icons) { color: @dp; }
+.light-purple(@darken) when (@colored-icons) { .darken-for-light-theme(@lp, @darken) }
+.medium-purple(@darken) when (@colored-icons) { .darken-for-light-theme(@mp, @darken) }
+.dark-purple(@darken) when (@colored-icons) { .darken-for-light-theme(@dp, @darken) }
 
-.light-orange when (@colored-icons) { color: @lo; }
-.medium-orange when (@colored-icons) { color: @mo; }
-.dark-orange when (@colored-icons) { color: @do; }
+.light-orange(@darken) when (@colored-icons) { .darken-for-light-theme(@lo, @darken) }
+.medium-orange(@darken) when (@colored-icons) { .darken-for-light-theme(@mo, @darken) }
+.dark-orange(@darken) when (@colored-icons) { .darken-for-light-theme(@do, @darken) }
 
-.light-cyan when (@colored-icons) { color: @lc; }
-.medium-cyan when (@colored-icons) { color: @mc; }
-.dark-cyan when (@colored-icons) { color: @dc; }
+.light-cyan(@darken) when (@colored-icons) { .darken-for-light-theme(@lc, @darken) }
+.medium-cyan(@darken) when (@colored-icons) { .darken-for-light-theme(@mc, @darken) }
+.dark-cyan(@darken) when (@colored-icons) { .darken-for-light-theme(@dc, @darken) }
 
-.light-pink when (@colored-icons) { color: @lpk; }
-.medium-pink when (@colored-icons) { color: @mpk; }
-.dark-pink when (@colored-icons) { color: @dpk; }
+.light-pink(@darken) when (@colored-icons) { .darken-for-light-theme(@lpk, @darken) }
+.medium-pink(@darken) when (@colored-icons) { .darken-for-light-theme(@mpk, @darken) }
+.dark-pink(@darken) when (@colored-icons) { .darken-for-light-theme(@dpk, @darken) }
